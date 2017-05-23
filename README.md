@@ -35,8 +35,24 @@ import Input from '@react-ag-components/input'
 
 ## Contributing
 
-## Build
+Get the repository
+```
+git clone https://github.com/alphillips/input.git
+```
+
+Update dependencies
+```
+npm install
+```
+
+Run the project
+```
+npm start
+```
+
+### Deploy to npm
+#### Build
 `npm run build -- --copy-files`
 
-## Publish
+#### Publish
 `npm publish --access public`
