@@ -1,16 +1,42 @@
 # input
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+React component for Input
 
-Describe input here.
+## Usage
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+### Install
+```
+npm i @react-ag-components/input --save
+```
+### Use in your project
+```
+import Input from '@react-ag-components/input'
+```
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+```
+<Input
+  label="Weight amount"
+  id="weight-amount"
+  value={this.state.weightAmount}
+  onChange={this.onChange('weightAmount')} />
+```
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+### Properties
+
+| Property        | Default| Description  |
+| -------- |:-------------:|-------------:|
+| id       | same as label |              |
+| type     | "text"        |              |
+| value    | ""            |              |
+| onBlur   |               | function     |
+| onChange |               | function     |
+| label    | ""            |              |
+| error    | ""            |              |
+
+## Contributing
+
+## Build
+`npm run build -- --copy-files`
+
+## Publish
+`npm publish --access public`
