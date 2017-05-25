@@ -17,7 +17,7 @@ class Input extends React.Component {
       }
 
       this.linkStyle = {
-        maxWidth: props.maxWidth || "500px"
+        maxWidth: props.maxWidth || "100%"
       };
   }
 
@@ -83,6 +83,7 @@ class Input extends React.Component {
           value={this.state.value}
           onBlur={this.onBlur}
           onChange={this.onChange}
+          placeholder={this.props.placeholder || ""}
         />
         <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.props.error}</span>
       </div>

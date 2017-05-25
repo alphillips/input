@@ -28,7 +28,7 @@ class Demo extends Component {
       <Input label="Input value" id="input-value" value={this.state.value} onChange={this.onChange('value')} />
 
       <h2>Small input</h2>
-      <Input label="Input value" id="input-value" value={this.state.value} onChange={this.onChange('value')} maxWidth="50px"/>
+      <Input label="Input value" placeholder="Enter value" id="input-value" value={this.state.value} onChange={this.onChange('value')} maxWidth="50px"/>
 
 
       <h2>With errors</h2>
