@@ -1,6 +1,6 @@
 {
   "name": "@react-ag-components/input",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Input component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -24,33 +24,9 @@
     "react": "15.x"
   },
   "devDependencies": {
-    "@gov.au/pancake-sass": "^1.1.0",
-    "@gov.au/text-inputs": "^0.1.1",
     "nwb": "0.15.x",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
-  },
-  "pancake": {
-    "auto-save": true,
-    "plugins": true,
-    "ignore": [],
-    "css": {
-      "minified": true,
-      "modules": false,
-      "browsers": [
-        "last 2 versions",
-        "ie 8",
-        "ie 9",
-        "ie 10"
-      ],
-      "location": "src/",
-      "name": "ui-kit.css"
-    },
-    "sass": {
-      "modules": false,
-      "location": false,
-      "name": false
-    }
   },
   "author": "alphillips",
   "homepage": "",

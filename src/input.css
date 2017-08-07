@@ -1,5 +1,5 @@
 /*input[type='text'] {
-  max-width: 500px; 
+  max-width: 500px;
 }*/
 
 div.text-group {
@@ -8,6 +8,14 @@ div.text-group {
 
 span.hasError {
   display: none;
+}
+
+.uikit-text-input:invalid {
+    border: 2px solid #777;
+}
+
+.uikit-text-input:invalid:focus {
+    background-color: #effafc;
 }
 
 .hasError {
@@ -26,5 +34,9 @@ span.hasError {
     display: block;
   }
   .hasError input {
+    border: 2px solid #b7202d;
+  }
+
+  .hasError input.uikit-text-input {
     border: 2px solid #b7202d;
   }

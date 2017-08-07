@@ -13,7 +13,8 @@ class Input extends React.Component {
       this.state = {
         value:props.value || '',
         errorClass: '',
-        errorMessage: ''
+        errorMessage: '',
+        requiredError:false
       }
 
       this.linkStyle = {
@@ -36,15 +37,20 @@ class Input extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.error){
+    console.log(this.state.requiredError)
+    if(nextProps.error || this.state.requiredError){
       this.setState((prevState, props) => ({
         errorClass: 'hasError',
         errorMessage: this.props.error
       }))
+      if(this.state.requiredError){
+        errorMessage: 'This field is required'
+      }
     } else {
       this.setState((prevState, props) => ({
         errorClass: '',
-        errorMessage: ''
+        errorMessage: '',
+        errorMessage: false
       }))
     }
     if(nextProps.value){
@@ -56,6 +62,20 @@ class Input extends React.Component {
 
   onBlur = (e) => {
     let val = e.target.value
+    if(this.props.required && val.length < 1){
+      this.setState((prevState, props) => ({
+        errorClass: 'hasError',
+        errorMessage: 'This field is required',
+        requiredError:true
+      }))
+    } else {
+      if(!this.props.error)
+      this.setState((prevState, props) => ({
+        errorClass: '',
+        errorMessage: '',
+        requiredError:false
+      }))
+    }
     if(this.props.onBlur){
       this.props.onBlur(val);
     }
@@ -63,6 +83,7 @@ class Input extends React.Component {
 
   onChange = (e) => {
     let val = e.target.value
+    console.log(val)
     this.setState((prevState, props) => ({
       value:val
     }))
@@ -70,6 +91,7 @@ class Input extends React.Component {
       this.props.onChange(val);
     }
   }
+
 
   render() {
     return (
@@ -84,8 +106,9 @@ class Input extends React.Component {
           onBlur={this.onBlur}
           onChange={this.onChange}
           placeholder={this.props.placeholder || ""}
+          required={this.props.required || false}
         />
-        <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.props.error}</span>
+        <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
       </div>
     )
   }

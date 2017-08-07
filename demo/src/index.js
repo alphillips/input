@@ -25,14 +25,24 @@ class Demo extends Component {
       <h1>Input</h1>
 
       <h2>Basic input</h2>
-      <Input label="Input value" id="input-value" value={this.state.value} onChange={this.onChange('value')} />
+      <Input label="Input value" id="input-value-1" value={this.state.value1} onChange={this.onChange('value1')} />
 
       <h2>Small input</h2>
-      <Input label="Input value" placeholder="Enter value" id="input-value" value={this.state.value} onChange={this.onChange('value')} maxWidth="50px"/>
+      <Input label="Input value" placeholder="Enter value" id="input-value-2" value={this.state.value2} onChange={this.onChange('value2')} maxWidth="50px"/>
 
 
       <h2>With errors</h2>
-      <Input label="Input value" id="input-value" value={this.state.value} onChange={this.onChange('value')} error="Value invalid"/>
+      <Input label="Input value" id="input-value-3" value={this.state.value3} onChange={this.onChange('value3')} error="Value invalid"/>
+
+      <h2>With required</h2>
+      <Input
+        label="Input value"
+        id="input-value-4"
+        value={this.state.value4}
+        onChange={this.onChange('value4')}
+        required={true}
+        />
+
 
     </div>
   }
