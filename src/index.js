@@ -36,6 +36,7 @@ class Input extends React.Component {
     }
   }
 
+
   componentWillReceiveProps(nextProps) {
     console.log(this.state.requiredError)
     if(nextProps.error || this.state.requiredError){
@@ -94,6 +95,7 @@ class Input extends React.Component {
 
 
   render() {
+
     return (
       <div className={'text-group ' + this.state.errorClass}>
         {this.props.label && <label htmlFor={this.id}>{this.props.label}</label>}
@@ -107,6 +109,7 @@ class Input extends React.Component {
           onChange={this.onChange}
           placeholder={this.props.placeholder || ""}
           required={this.props.required || false}
+          disabled={this.props.disabled || false}
         />
         <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
       </div>

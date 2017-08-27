@@ -34,7 +34,7 @@ class Demo extends Component {
       <h2>With errors</h2>
       <Input label="Input value" id="input-value-3" value={this.state.value3} onChange={this.onChange('value3')} error="Value invalid"/>
 
-      <h2>With required</h2>
+      <h2>With required </h2>
       <Input
         label="Input value"
         id="input-value-4"
@@ -44,8 +44,18 @@ class Demo extends Component {
         />
 
 
+        <h2>With disabled </h2>
+        <Input
+          label="Input value"
+          id="input-value-5"
+          value={this.state.value5}
+          onChange={this.onChange('value5')}
+          disabled={true}
+          />
+
     </div>
   }
 }
 
 render(<Demo/>, document.querySelector('#demo'))
+//render(<MyComponent/>, document.querySelector('#demo'))
