@@ -53,6 +53,19 @@ class Demo extends Component {
           disabled={true}
           />
 
+
+          <h2>With min and max values </h2>
+          <Input
+            label="Input value"
+            id="input-value-6"
+            value={this.state.value6}
+            onChange={this.onChange('value6')}
+            min="1"
+            max="10"
+            type="number"
+            width="2"
+            maxlength="2"
+            />
     </div>
   }
 }

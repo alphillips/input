@@ -110,6 +110,10 @@ class Input extends React.Component {
           placeholder={this.props.placeholder || ""}
           required={this.props.required || false}
           disabled={this.props.disabled || false}
+          min={this.props.min || ""}
+          max={this.props.max || ""}
+          maxlength={this.props.maxlength || ""}
+          width={this.props.width || ""}
         />
         <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
       </div>
