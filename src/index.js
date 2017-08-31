@@ -114,6 +114,7 @@ class Input extends React.Component {
           max={this.props.max || ""}
           maxlength={this.props.maxlength || ""}
           width={this.props.width || ""}
+          pattern={this.props.pattern || ""}
         />
         <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
       </div>
