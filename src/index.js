@@ -1,7 +1,9 @@
 import React from 'react'
 
-import './ui-kit.css'
-import './input.css'
+// import './ui-kit.css'
+// import './input.css'
+
+import TextField from 'material-ui/TextField'
 
 class Input extends React.Component {
 
@@ -96,7 +98,15 @@ class Input extends React.Component {
 
   render() {
 
+    const styles = {
+      hintStyle: {
+        color: '#999',
+      }
+    }
+
     return (
+      <div>
+      {/*
       <div className={'text-group ' + this.state.errorClass}>
         {this.props.label && <label htmlFor={this.id}>{this.props.label}</label>}
         <input
@@ -118,6 +128,28 @@ class Input extends React.Component {
         />
         <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
       </div>
+      */}
+      <TextField
+        value={this.state.value}
+        floatingLabelText={this.props.label}
+        onBlur={this.onBlur}
+        onChange={this.onChange}
+        fullWidth={true}
+        floatingLabelStyle={styles.hintStyle}
+        multiLine={this.props.multiLine || false}
+        rows={this.props.rows || 1}
+        errorText={this.state.errorMessage}
+        required={this.props.required || false}
+        disabled={this.props.disabled || false}
+        min={this.props.min || ""}
+        max={this.props.max || ""}
+        maxLength={this.props.maxlength || ""}
+        width={this.props.width || ""}
+        pattern={this.props.pattern || ""}
+      />
+
+      </div>
+
     )
   }
 }
