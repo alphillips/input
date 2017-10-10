@@ -38,7 +38,6 @@ class Input extends React.Component {
     }
   }
 
-
   componentWillReceiveProps(nextProps) {
     if(nextProps.error || this.state.requiredError){
       this.setState((prevState, props) => ({
@@ -146,8 +145,6 @@ class Input extends React.Component {
         pattern={this.props.pattern || ""}
         ref={this.props.inputRef || this.id}
         placeholder=""
-        className={this.props.className || ""}
-        type={this.props.type || "text"}
       />
 
       </div>
