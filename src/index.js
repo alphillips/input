@@ -40,7 +40,6 @@ class Input extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.state.requiredError)
     if(nextProps.error || this.state.requiredError){
       this.setState((prevState, props) => ({
         errorClass: 'hasError',
