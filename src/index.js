@@ -145,12 +145,12 @@ class Input extends React.Component {
         maxLength={this.props.maxlength || ""}
         width={this.props.width || ""}
         pattern={this.props.pattern || ""}
-        id={this.props.id}
+        id={this.props.id||""}
         ref={this.props.inputRef || this.id}
         placeholder=""
         className={this.props.class || ""}
         type={this.props.type || "text"}
-        disabled={this.props.disabled}
+        disabled={this.props.disabled||""}
       />
 
       </div>
