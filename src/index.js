@@ -98,8 +98,13 @@ class Input extends React.Component {
     const styles = {
       hintStyle: {
         color: '#999',
+      },
+      inputStyle: {
+        fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+        color:'#313131'
       }
     }
+
 
     return (
       <div>
@@ -127,6 +132,7 @@ class Input extends React.Component {
       </div>
       */}
       <TextField
+        inputStyle={styles.inputStyle}
         value={this.state.value}
         floatingLabelText={this.props.label}
         onBlur={this.onBlur}
