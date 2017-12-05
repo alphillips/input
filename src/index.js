@@ -148,7 +148,7 @@ class Input extends React.Component {
         max={this.props.max || ""}
         maxLength={this.props.maxlength || ""}
         width={this.props.width || ""}
-        pattern={this.props.pattern || ""}
+        pattern={this.props.pattern || null}
         ref={this.props.inputRef || this.id}
         placeholder=""
       />
