@@ -1,7 +1,6 @@
 import React from 'react'
 
-// import './ui-kit.css'
-// import './input.css'
+import './input.css'
 
 import TextField from 'material-ui/TextField'
 
@@ -77,6 +76,20 @@ class Input extends React.Component {
         requiredError:false
       }))
     }
+    if(this.props.type === 'number'){
+      let value = parseInt(val, 10)
+      if(value < 1){
+        this.setState((prevState, props) => ({
+          errorClass: 'hasError',
+          errorMessage: 'Must greater than zero'
+        }))
+      } else {
+        this.setState((prevState, props) => ({
+          errorClass: '',
+          errorMessage: ''
+        }))
+      }
+    }
     if(this.props.onBlur){
       this.props.onBlur(val);
     }
@@ -132,6 +145,7 @@ class Input extends React.Component {
       </div>
       */}
       <TextField
+        type={this.props.type || "text"}
         inputStyle={styles.inputStyle}
         value={this.state.value}
         floatingLabelText={this.props.label}

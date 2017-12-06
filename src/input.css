@@ -1,42 +1,7 @@
-/*input[type='text'] {
-  max-width: 500px;
-}*/
-
-div.text-group {
-  margin-bottom: 1.5em;
-}
-
-span.hasError {
-  display: none;
-}
-
-.uikit-text-input:invalid {
-    border: 2px solid #777;
-}
-
-.uikit-text-input:invalid:focus {
-    background-color: #effafc;
-}
-
-.hasError {
-  border-left: solid 4px #b7202d;
-  margin-left: 3px;
-  padding-left: 15px; }
-  .hasError span.hasError {
-    color: #b7202d;
-    color: #b7202d;
-    border: 0;
-    padding: 0;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     margin: 0;
-    width: 100%;
-    font-size: 1rem;
-    clear: both;
-    display: block;
-  }
-  .hasError input {
-    border: 2px solid #b7202d;
-  }
-
-  .hasError input.uikit-text-input {
-    border: 2px solid #b7202d;
-  }
+}
