@@ -70,6 +70,16 @@ class Demo extends Component {
               width="2"
               maxlength="2"
               />
+
+              <h2>Is number </h2>
+              <Input
+                label="Input value"
+                id="input-value-7"
+                value={this.state.value7}
+                onChange={this.onChange('value7')}
+                type="number"
+                />
+
       </div>
     </MuiThemeProvider>
     )
