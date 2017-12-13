@@ -1,0 +1,67 @@
+/*input[type='text'] {
+  max-width: 500px;
+}*/
+
+div.text-group {
+  margin-bottom: 1.5em;
+}
+
+span.hasError {
+  display: none;
+}
+
+.uikit-text-input:invalid {
+    border: 2px solid #777;
+}
+
+.uikit-text-input:invalid:focus {
+    background-color: #effafc;
+}
+
+.hasError {
+  border-left: solid 4px #b7202d;
+  margin-left: 3px;
+  padding-left: 15px; }
+  .hasError span.hasError {
+    color: #b7202d;
+    color: #b7202d;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 1rem;
+    clear: both;
+    display: block;
+  }
+  .hasError input {
+    border: 2px solid #b7202d;
+  }
+
+  .hasError input.uikit-text-input {
+    border: 2px solid #b7202d;
+  }
+
+  .nexdoc-input > div {
+    background-color: whitesmoke!important;
+    height: 61px!important;
+  }
+  .nexdoc-input hr {
+    position: absolute!important;
+    top: 57px!important;
+    left: 0;
+    height: 2px!important;
+  }
+  .nexdoc-input label {
+    top: 31px!important;
+    padding-left: 16px;
+    transform: scale(1) translate(0px, -12px);
+  }
+  .nexdoc-input input {
+    height: 83px!important;
+    margin-top: 0!important;
+    padding-left: 12px!important;
+  }
+
+  .nexdoc-input div+div {
+    padding-left: 16px!important;
+  }
