@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import './ui-kit.css'
-// import './input.css'
+import './input.css'
 
 import TextField from 'material-ui/TextField'
 
@@ -99,6 +99,10 @@ class Input extends React.Component {
       hintStyle: {
         color: '#999',
       },
+      floatingLabelStyle: {
+        color: '#999',
+        transform: 'scale(1) translate(0px, -12px)'
+      },
       inputStyle: {
         fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
         color:'#313131'
@@ -107,52 +111,28 @@ class Input extends React.Component {
 
 
     return (
-      <div>
-      {/*
-      <div className={'text-group ' + this.state.errorClass}>
-        {this.props.label && <label htmlFor={this.id}>{this.props.label}</label>}
-        <input
-          className="uikit-text-input uikit-text-input--block"
-          style={this.linkStyle}
-          id={this.id}
-          type={this.props.type || "text"}
+      <div className="nexdoc-input">
+        <TextField
+          inputStyle={styles.inputStyle}
           value={this.state.value}
+          floatingLabelText={this.props.label}
           onBlur={this.onBlur}
           onChange={this.onChange}
-          placeholder={this.props.placeholder || ""}
+          fullWidth={true}
+          floatingLabelStyle={styles.floatingLabelStyle}
+          multiLine={this.props.multiLine || false}
+          rows={this.props.rows || 1}
+          errorText={this.state.errorMessage}
           required={this.props.required || false}
           disabled={this.props.disabled || false}
           min={this.props.min || ""}
           max={this.props.max || ""}
-          maxlength={this.props.maxlength || ""}
+          maxLength={this.props.maxlength || ""}
           width={this.props.width || ""}
-          pattern={this.props.pattern || ""}
+          pattern={this.props.pattern || null}
+          ref={this.props.inputRef || this.id}
+          placeholder=""
         />
-        <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
-      </div>
-      */}
-      <TextField
-        inputStyle={styles.inputStyle}
-        value={this.state.value}
-        floatingLabelText={this.props.label}
-        onBlur={this.onBlur}
-        onChange={this.onChange}
-        fullWidth={true}
-        floatingLabelStyle={styles.hintStyle}
-        multiLine={this.props.multiLine || false}
-        rows={this.props.rows || 1}
-        errorText={this.state.errorMessage}
-        required={this.props.required || false}
-        disabled={this.props.disabled || false}
-        min={this.props.min || ""}
-        max={this.props.max || ""}
-        maxLength={this.props.maxlength || ""}
-        width={this.props.width || ""}
-        pattern={this.props.pattern || null}
-        ref={this.props.inputRef || this.id}
-        placeholder=""
-      />
-
       </div>
 
     )

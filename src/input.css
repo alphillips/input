@@ -40,3 +40,28 @@ span.hasError {
   .hasError input.uikit-text-input {
     border: 2px solid #b7202d;
   }
+
+  .nexdoc-input > div {
+    background-color: whitesmoke!important;
+    height: 61px!important;
+  }
+  .nexdoc-input hr {
+    position: absolute!important;
+    top: 57px!important;
+    left: 0;
+    height: 2px!important;
+  }
+  .nexdoc-input label {
+    top: 31px!important;
+    padding-left: 16px;
+    transform: scale(1) translate(0px, -12px);
+  }
+  .nexdoc-input input {
+    height: 83px!important;
+    margin-top: 0!important;
+    padding-left: 12px!important;
+  }
+
+  .nexdoc-input div+div {
+    padding-left: 16px!important;
+  }
