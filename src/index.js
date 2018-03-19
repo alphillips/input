@@ -105,6 +105,13 @@ class Input extends React.Component {
     }
   }
 
+  keyPress = (e) => {
+    if(e.charCode == 13){
+      if(this.props.onEnter){
+        this.props.onEnter()
+      }
+    }
+  }
 
   render() {
 
@@ -121,52 +128,29 @@ class Input extends React.Component {
 
     return (
       <div>
-      {/*
-      <div className={'text-group ' + this.state.errorClass}>
-        {this.props.label && <label htmlFor={this.id}>{this.props.label}</label>}
-        <input
-          className="uikit-text-input uikit-text-input--block"
-          style={this.linkStyle}
-          id={this.id}
+        <TextField
           type={this.props.type || "text"}
+          inputStyle={styles.inputStyle}
           value={this.state.value}
+          floatingLabelText={this.props.label}
           onBlur={this.onBlur}
           onChange={this.onChange}
-          placeholder={this.props.placeholder || ""}
+          fullWidth={true}
+          floatingLabelStyle={styles.hintStyle}
+          multiLine={this.props.multiLine || false}
+          rows={this.props.rows || 1}
+          errorText={this.state.errorMessage}
           required={this.props.required || false}
           disabled={this.props.disabled || false}
           min={this.props.min || ""}
           max={this.props.max || ""}
-          maxlength={this.props.maxlength || ""}
+          maxLength={this.props.maxlength || ""}
           width={this.props.width || ""}
-          pattern={this.props.pattern || ""}
+          pattern={this.props.pattern || null}
+          ref={this.props.inputRef || this.id}
+          placeholder=""
+          onKeyPress={this.keyPress}
         />
-        <span role="alert" aria-live="polite" className={this.state.errorClass}>{this.state.errorMessage}</span>
-      </div>
-      */}
-      <TextField
-        type={this.props.type || "text"}
-        inputStyle={styles.inputStyle}
-        value={this.state.value}
-        floatingLabelText={this.props.label}
-        onBlur={this.onBlur}
-        onChange={this.onChange}
-        fullWidth={true}
-        floatingLabelStyle={styles.hintStyle}
-        multiLine={this.props.multiLine || false}
-        rows={this.props.rows || 1}
-        errorText={this.state.errorMessage}
-        required={this.props.required || false}
-        disabled={this.props.disabled || false}
-        min={this.props.min || ""}
-        max={this.props.max || ""}
-        maxLength={this.props.maxlength || ""}
-        width={this.props.width || ""}
-        pattern={this.props.pattern || null}
-        ref={this.props.inputRef || this.id}
-        placeholder=""
-      />
-
       </div>
 
     )

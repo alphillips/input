@@ -22,6 +22,10 @@ class Demo extends Component {
     }
   }
 
+  onEnter = () => {
+    console.log('enter hit')
+  }
+
   render() {
     return (
     <MuiThemeProvider>
@@ -79,6 +83,15 @@ class Demo extends Component {
                 onChange={this.onChange('value7')}
                 type="number"
                 />
+
+            <h2>With onEnter</h2>
+            <Input
+              label="Input value"
+              id="input-value-8"
+              value={this.state.value8}
+              onChange={this.onChange('value8')}
+              onEnter={this.onEnter}
+              />
 
       </div>
     </MuiThemeProvider>
