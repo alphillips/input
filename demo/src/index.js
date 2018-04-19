@@ -62,7 +62,7 @@ class Demo extends Component {
             />
 
 
-            <h2>With min and max values </h2>
+            <h2>Max length</h2>
             <Input
               label="Input value"
               id="input-value-6"

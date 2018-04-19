@@ -129,6 +129,8 @@ class Input extends React.Component {
     return (
       <div>
         <TextField
+          margin="normal"
+          label={this.props.label}
           type={this.props.type || "text"}
           inputStyle={styles.inputStyle}
           value={this.state.value}
@@ -139,12 +141,14 @@ class Input extends React.Component {
           floatingLabelStyle={styles.hintStyle}
           multiLine={this.props.multiLine || false}
           rows={this.props.rows || 1}
+          error={this.state.errorMessage || false}
           errorText={this.state.errorMessage}
           required={this.props.required || false}
           disabled={this.props.disabled || false}
-          min={this.props.min || ""}
-          max={this.props.max || ""}
           maxLength={this.props.maxlength || ""}
+          inputProps={{
+            maxLength: this.props.maxlength || "",
+          }}
           width={this.props.width || ""}
           pattern={this.props.pattern || null}
           ref={this.props.inputRef || this.id}
