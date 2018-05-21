@@ -9,6 +9,7 @@ import React from 'react';
 import './input.css';
 
 import TextField from 'material-ui/TextField';
+import Help from '@react-ag-components/help';
 
 var Input = function (_React$Component) {
   _inherits(Input, _React$Component);
@@ -159,9 +160,26 @@ var Input = function (_React$Component) {
       }
     };
 
+    var inputContainerStyle = {};
+    var helpContainerStyle = {
+      display: 'none'
+    };
+    var className = '';
+
+    if (this.props.helpText) {
+      className = 'input-with-help';
+      inputContainerStyle = {
+        width: '90%'
+      };
+
+      helpContainerStyle = {
+        marginTop: '40px'
+      };
+    }
+
     return React.createElement(
       'div',
-      null,
+      { className: className },
       React.createElement(TextField, {
         margin: 'normal',
         label: this.props.label,
@@ -187,7 +205,13 @@ var Input = function (_React$Component) {
         pattern: this.props.pattern || null,
         ref: this.props.inputRef || this.id,
         placeholder: '',
-        onKeyPress: this.keyPress
+        onKeyPress: this.keyPress,
+        title: this.props.title || '',
+        style: inputContainerStyle
+      }),
+      this.props.helpText && React.createElement(Help, {
+        text: this.props.helpText,
+        style: helpContainerStyle
       })
     );
   };
