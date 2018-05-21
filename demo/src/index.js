@@ -33,7 +33,8 @@ class Demo extends Component {
         <h1>Input</h1>
 
         <h2>Basic input</h2>
-        <Input label="Input value" id="input-value-1" value={this.state.value1} onChange={this.onChange('value1')} />
+        <Input label="Input value" id="input-value-1" value={this.state.value1} onChange={this.onChange('value1')} title="This is what you do here"
+        helpText="This is some help text for the input"/>
 
         <h2>Small input</h2>
         <Input label="Input value" placeholder="Enter value" id="input-value-2" value={this.state.value2} onChange={this.onChange('value2')} maxWidth="50px"/>

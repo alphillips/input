@@ -3,6 +3,7 @@ import React from 'react'
 import './input.css'
 
 import TextField from 'material-ui/TextField'
+import Help from '@react-ag-components/help'
 
 class Input extends React.Component {
 
@@ -125,36 +126,61 @@ class Input extends React.Component {
       }
     }
 
+    let inputContainerStyle = {}
+    let helpContainerStyle = {
+      display:'none'
+    }
+    let className= ''
+
+    if(this.props.helpText){
+      className = 'input-with-help'
+      inputContainerStyle = {
+        width: '90%'
+      }
+
+      helpContainerStyle = {
+        marginTop: '40px'
+      }
+
+    }
 
     return (
-      <div>
-        <TextField
-          margin="normal"
-          label={this.props.label}
-          type={this.props.type || "text"}
-          inputStyle={styles.inputStyle}
-          value={this.state.value}
-          floatingLabelText={this.props.label}
-          onBlur={this.onBlur}
-          onChange={this.onChange}
-          fullWidth={true}
-          floatingLabelStyle={styles.hintStyle}
-          multiLine={this.props.multiLine || false}
-          rows={this.props.rows || 1}
-          error={this.state.errorMessage || false}
-          errorText={this.state.errorMessage}
-          required={this.props.required || false}
-          disabled={this.props.disabled || false}
-          maxLength={this.props.maxlength || ""}
-          inputProps={{
-            maxLength: this.props.maxlength || "",
-          }}
-          width={this.props.width || ""}
-          pattern={this.props.pattern || null}
-          ref={this.props.inputRef || this.id}
-          placeholder=""
-          onKeyPress={this.keyPress}
-        />
+      <div className={className}>
+          <TextField
+            margin="normal"
+            label={this.props.label}
+            type={this.props.type || "text"}
+            inputStyle={styles.inputStyle}
+            value={this.state.value}
+            floatingLabelText={this.props.label}
+            onBlur={this.onBlur}
+            onChange={this.onChange}
+            fullWidth={true}
+            floatingLabelStyle={styles.hintStyle}
+            multiLine={this.props.multiLine || false}
+            rows={this.props.rows || 1}
+            error={this.state.errorMessage || false}
+            errorText={this.state.errorMessage}
+            required={this.props.required || false}
+            disabled={this.props.disabled || false}
+            maxLength={this.props.maxlength || ""}
+            inputProps={{
+              maxLength: this.props.maxlength || "",
+            }}
+            width={this.props.width || ""}
+            pattern={this.props.pattern || null}
+            ref={this.props.inputRef || this.id}
+            placeholder=""
+            onKeyPress={this.keyPress}
+            title={this.props.title || ''}
+            style={inputContainerStyle}
+          />
+          {this.props.helpText &&
+              <Help
+                text={this.props.helpText}
+                style={helpContainerStyle}
+              />
+          }
       </div>
 
     )
