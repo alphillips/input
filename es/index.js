@@ -189,6 +189,8 @@ var Input = function (_React$Component) {
         floatingLabelText: this.props.label,
         onBlur: this.onBlur,
         onChange: this.onChange,
+        onFocus: this.props.onFocu,
+        onClick: this.props.onClick,
         fullWidth: true,
         floatingLabelStyle: styles.hintStyle,
         multiLine: this.props.multiLine || false,
