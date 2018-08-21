@@ -119,6 +119,9 @@ var Input = function (_React$Component) {
   Input.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     var _this3 = this;
 
+    if (nextProps.value !== this.props.value) {
+      this.setState({ value: nextProps.value });
+    }
     if (nextProps.error || this.state.requiredError) {
       this.setState(function (prevState, props) {
         return {
