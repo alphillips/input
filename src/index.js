@@ -39,6 +39,9 @@ class Input extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if(nextProps.value !== this.props.value) {
+      this.setState({ value: nextProps.value })
+    }
     if(nextProps.error || this.state.requiredError){
       this.setState((prevState, props) => ({
         errorClass: 'hasError',
@@ -169,6 +172,7 @@ class Input extends React.Component {
             inputProps={{
               maxLength: this.props.maxlength || "",
             }}
+            className={this.props.className || ""}
             width={this.props.width || ""}
             pattern={this.props.pattern || null}
             ref={this.props.inputRef || this.id}
