@@ -103,7 +103,7 @@ class Input extends React.Component {
     let value = e.target.value
 
     if(this.props.type === "tel" || this.props.type === "number"){
-      //is not number will return false when it's not a number
+      // only action if it's a number
       if(!isNaN(value)){
         this.updateValue(value)
       }
