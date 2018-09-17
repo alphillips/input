@@ -82,7 +82,7 @@ class Demo extends Component {
                 id="input-value-7"
                 value={this.state.value7}
                 onChange={this.onChange('value7')}
-                type="number"
+                type="tel"
                 />
 
             <h2>With onEnter</h2>

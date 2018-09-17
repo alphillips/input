@@ -101,12 +101,18 @@ class Input extends React.Component {
 
   onChange = (e) => {
     let val = e.target.value
-    this.setState((prevState, props) => ({
-      value:val
-    }))
-    if(this.props.onChange){
-      this.props.onChange(val);
+
+    if(this.props.type === "tel" || this.props.type === "number"){
+      if(!isNaN(val)){
+        this.setState((prevState, props) => ({
+          value:val
+        }))
+        if(this.props.onChange){
+          this.props.onChange(val);
+        }
+      }
     }
+
   }
 
   keyPress = (e) => {
