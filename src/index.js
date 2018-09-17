@@ -112,8 +112,14 @@ class Input extends React.Component {
           this.props.onChange(val);
         }
       }
+    } else {
+      this.setState((prevState, props) => ({
+        value:val
+      }))
+      if(this.props.onChange){
+        this.props.onChange(val);
+      }
     }
-
   }
 
   keyPress = (e) => {
