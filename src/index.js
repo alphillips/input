@@ -103,6 +103,7 @@ class Input extends React.Component {
     let val = e.target.value
 
     if(this.props.type === "tel" || this.props.type === "number"){
+      //is not number will return false when it's not a number
       if(!isNaN(val)){
         this.setState((prevState, props) => ({
           value:val
