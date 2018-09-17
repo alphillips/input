@@ -100,25 +100,23 @@ class Input extends React.Component {
   }
 
   onChange = (e) => {
-    let val = e.target.value
+    let value = e.target.value
 
     if(this.props.type === "tel" || this.props.type === "number"){
       //is not number will return false when it's not a number
-      if(!isNaN(val)){
-        this.setState((prevState, props) => ({
-          value:val
-        }))
-        if(this.props.onChange){
-          this.props.onChange(val);
-        }
+      if(!isNaN(value)){
+        this.updateValue(value)
       }
     } else {
-      this.setState((prevState, props) => ({
-        value:val
-      }))
-      if(this.props.onChange){
-        this.props.onChange(val);
-      }
+      this.updateValue(value)
+    }
+  }
+
+  updateValue = (value) => {
+    this.setState({value})
+
+    if(this.props.onChange){
+      this.props.onChange(value);
     }
   }
 
