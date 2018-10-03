@@ -85,7 +85,7 @@ class Input extends React.Component {
       if(value < 1){
         this.setState((prevState, props) => ({
           errorClass: 'hasError',
-          errorMessage: 'Must greater than zero'
+          errorMessage: 'Must be greater than zero'
         }))
       } else {
         this.setState((prevState, props) => ({
