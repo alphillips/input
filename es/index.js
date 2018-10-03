@@ -44,7 +44,7 @@ var Input = function (_React$Component) {
           _this.setState(function (prevState, props) {
             return {
               errorClass: 'hasError',
-              errorMessage: 'Must greater than zero'
+              errorMessage: 'Must be greater than zero'
             };
           });
         } else {
