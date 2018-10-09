@@ -2,7 +2,7 @@ import React from 'react'
 
 import './input.css'
 
-import TextField from 'material-ui/TextField'
+import TextField from './TextField/TextField'
 import Help from '@react-ag-components/help'
 
 class Input extends React.Component {
